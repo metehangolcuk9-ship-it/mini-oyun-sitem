@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kardesimin Sitesi</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Web Öğreniyorum</h1>
+
+<p id="yazi">Butona basınca bu yazı değişecek</p>
+
+<button id="btn">Tıkla</button>
+
+<script>
+    document.getElementById("btn").onclick = function () {
+        document.getElementById("yazi").innerText = "Helal olsun, JavaScript çalışıyor 👊";
+    }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Oyun Sitesi 2</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mini İnteraktif Site</h1>
+
+<p id="yazi">Butonlara basınca renk ve yazı değişecek</p>
+
+<button onclick="degistir('Merhaba!', 'green')">Yeşil Buton</button>
+<button onclick="degistir('Selam!', 'red')">Kırmızı Buton</button>
+<button onclick="degistir('Harika!', 'blue')">Mavi Buton</button>
+
+<script>
+function degistir(yazi, renk) {
+    let p = document.getElementById("yazi");
+    p.innerText = yazi;
+    p.style.color = renk;
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Oyun Sitesi</title>
+    <style>
+        body { background-color: #1e1e1e; color: white; font-family: Arial; text-align: center; }
+        .oyun { background-color: #2e2e2e; margin: 15px auto; padding: 15px; width: 300px; border-radius: 8px; }
+        button { padding: 8px 16px; margin-top: 10px; cursor: pointer; font-size: 14px; }
+        p { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>Mini Oyun Sitesi</h1>
+
+<div class="oyun">
+    <h3>Oyun 1: Uzay Macerası</h3>
+    <button onclick="indir('Uzay Macerası', 'yazi1')">İndir</button>
+    <p id="yazi1">Henüz indirilmedi</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 2: Canavar Avı</h3>
+    <button onclick="indir('Canavar Avı', 'yazi2')">İndir</button>
+    <p id="yazi2">Henüz indirilmedi</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 3: Hazine Bulmaca</h3>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3')">İndir</button>
+    <p id="yazi3">Henüz indirilmedi</p>
+</div>
+
+<script>
+function indir(oyunAdi, yaziId) {
+    let p = document.getElementById(yaziId);
+    if(p) {
+        p.innerText = oyunAdi + " indiriliyor... 👾";
+        p.style.color = "limegreen";
+    } else {
+        alert("Hata: id bulunamadı");
+    }
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>İnteraktif Oyun Sitesi</title>
+    <style>
+        body { background-color: #1a1a1a; color: white; font-family: Arial; text-align: center; }
+        .oyun { background-color: #2a2a2a; margin: 15px auto; padding: 15px; width: 320px; border-radius: 8px; }
+        button { padding: 8px 16px; margin: 5px; cursor: pointer; font-size: 14px; }
+        p { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>İnteraktif Mini Oyun Sitesi</h1>
+
+<div class="oyun">
+    <h3>Oyun 1: Uzay Macerası</h3>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'limegreen', '🚀')">İndir</button>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'purple', '⭐')">Favori Yap</button>
+    <p id="yazi1">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 2: Canavar Avı</h3>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'limegreen', '👾')">İndir</button>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'orange', '🔥')">Favori Yap</button>
+    <p id="yazi2">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 3: Hazine Bulmaca</h3>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'limegreen', '💎')">İndir</button>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'pink', '🎯')">Favori Yap</button>
+    <p id="yazi3">Henüz işlem yapılmadı</p>
+</div>
+
+<script>
+function indir(oyunAdi, yaziId, renk, emoji) {
+    let p = document.getElementById(yaziId);
+    if(p) {
+        p.innerText = oyunAdi + " işlem yapılıyor... " + emoji;
+        p.style.color = renk;
+    } else {
+        alert("Hata: id bulunamadı");
+    }
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Oyun Dünyam</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #1e1e1e, #111);
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #00ffff;
+            text-shadow: 2px 2px #000;
+        }
+
+        .oyun {
+            background-color: #2a2a2a;
+            margin: 20px auto;
+            padding: 20px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .oyun h3 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎮 Mini Oyun Dünyam 🎮</h1>
+
+<div class="oyun">
+    <h3>Oyun 1: Uzay Macerası</h3>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'limegreen', '🚀')">İndir</button>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'yellow', '⭐')">Favori Yap</button>
+    <p id="yazi1">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 2: Canavar Avı</h3>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'limegreen', '👾')">İndir</button>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'orange', '🔥')">Favori Yap</button>
+    <p id="yazi2">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 3: Hazine Bulmaca</h3>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'limegreen', '💎')">İndir</button>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'pink', '🎯')">Favori Yap</button>
+    <p id="yazi3">Henüz işlem yapılmadı</p>
+</div>
+
+<script>
+function indir(oyunAdi, yaziId, renk, emoji) {
+    let p = document.getElementById(yaziId);
+    if(p) {
+        p.innerText = oyunAdi + " işlem yapılıyor... " + emoji;
+        p.style.color = renk;
+    } else {
+        alert("Hata: id bulunamadı");
+    }
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎮 Mini Oyun Dünyam 2.0 🎮</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #1e1e1e, #111);
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 50px;
+            transition: background 0.5s;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 40px;
+            color: #00ffff;
+            text-shadow: 2px 2px #000;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px #000, 0 0 5px #00ffff; }
+            to { text-shadow: 2px 2px #000, 0 0 20px #00ffff; }
+        }
+
+        .oyun {
+            background-color: #2a2a2a;
+            margin: 20px auto;
+            padding: 20px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #00ffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .oyun:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        .oyun h3 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px #ffff00;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            transition: color 0.5s, transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎮 Mini Oyun Dünyam 2.0 🎮</h1>
+
+<div class="oyun">
+    <h3>Oyun 1: Uzay Macerası</h3>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'limegreen', '🚀')">İndir</button>
+    <button onclick="indir('Uzay Macerası', 'yazi1', 'yellow', '⭐')">Favori Yap</button>
+    <p id="yazi1">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 2: Canavar Avı</h3>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'limegreen', '👾')">İndir</button>
+    <button onclick="indir('Canavar Avı', 'yazi2', 'orange', '🔥')">Favori Yap</button>
+    <p id="yazi2">Henüz işlem yapılmadı</p>
+</div>
+
+<div class="oyun">
+    <h3>Oyun 3: Hazine Bulmaca</h3>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'limegreen', '💎')">İndir</button>
+    <button onclick="indir('Hazine Bulmaca', 'yazi3', 'pink', '🎯')">Favori Yap</button>
+    <p id="yazi3">Henüz işlem yapılmadı</p>
+</div>
+
+<script>
+function indir(oyunAdi, yaziId, renk, emoji) {
+    let p = document.getElementById(yaziId);
+    if(p) {
+        p.innerText = oyunAdi + " işlem yapılıyor... " + emoji;
+        p.style.color = renk;
+        p.style.transform = "scale(1.2)";
+        setTimeout(()=>{ p.style.transform = "scale(1)"; }, 300);
+        alert(oyunAdi + " simülasyonu çalıştı! 🎉");
+    } else {
+        alert("Hata: id bulunamadı");
+    }
+}
+</script>
+
+</body>
+</html>
+
